@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashflow Sankey</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-sankey/0.12.3/d3-sankey.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .form-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 14px;
+        }
+        .form-group input {
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #6BA3D4;
+        }
+        .category-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+        .category-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .btn {
+            background: #6BA3D4;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: block;
+            margin: 20px auto 0;
+        }
+        .btn:hover {
+            background: #5890BA;
+        }
+        #chart {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            min-height: 600px;
+        }
+        .node rect {
+            cursor: move;
+            fill-opacity: 0.9;
+            shape-rendering: crispEdges;
+        }
+        .node text {
+            pointer-events: none;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .link {
+            fill: none;
+            stroke-opacity: 0.4;
+        }
+        .link:hover {
+            stroke-opacity: 0.7;
+        }
+        .info-box {
+            background: #f8e8eb;
+            border-left: 4px solid #FC003b;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .info-box p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Générateur de Flux de Trésorerie</h1>
+        
+        
+        <div class="form-section">
+            <div class="info-box">
+                <p><strong>Instructions :</strong> Ce graphique vous aide à visualiser la circulation de votre argent. Indiquez simplement votre salaire et vos dépenses mensuelles dans le formulaire ci-dessous, puis cliquez sur “Générer le diagramme” pour voir comment votre revenu se répartit entre vos différentes catégories de dépenses.</p>
+            </div>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="salaire">Salaire mensuel (FCFA)</label>
+                    <input type="number" id="salaire" value="250000" min="0">
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h3>Logement</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="loyer">Loyer / Prêt (FCFA)</label>
+                        <input type="number" id="loyer" value="80000" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="charges">Charges (FCFA)</label>
+                        <input type="number" id="charges" value="40000" min="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h3>Investissements</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="actions">Actions (FCFA)</label>
+                        <input type="number" id="actions" value="20000" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="assurance">Assurance vie (FCFA)</label>
+                        <input type="number" id="assurance" value="15000" min="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h3>Vie quotidienne</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="restaurants">Restaurants (FCFA)</label>
+                        <input type="number" id="restaurants" value="37000" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="courses">Courses (FCFA)</label>
+                        <input type="number" id="courses" value="40000" min="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h3>Abonnements</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="internet">Internet / Téléphone (FCFA)</label>
+                        <input type="number" id="internet" value="10000" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="sport">Sport (FCFA)</label>
+                        <input type="number" id="sport" value="8000" min="0">
+                    </div>
+                </div>
+            </div>
+
+            <!-- <button class="btn" onclick="generateChart()"> Générer le diagramme</button>
+            <button class="btn btn-secondary" onclick="exportAsPNG()">Exporter en PNG</button>
+            <button class="btn btn-secondary" onclick="exportAsSVG()">Exporter en SVG</button> -->
+        </div>
+
+        <div id="chart"></div>
+    </div>
+
+    <!-- <script>
+        const colors = [
+            "#6BA3D4", "#E89F71", "#D4A5C4", "#8BB5A0", "#F4B5C7",
+            "#A8CEDC", "#E5C3A6", "#C4B5D4", "#B5D4C4", "#F4D4B5",
+            "#D4C4E5", "#B5E5D4", "#E5D4C4", "#D4E5C4"
+        ];
+
+        function generateChart() {
+            const salaire = parseFloat(document.getElementById('salaire').value) || 0;
+            const loyer = parseFloat(document.getElementById('loyer').value) || 0;
+            const charges = parseFloat(document.getElementById('charges').value) || 0;
+            const actions = parseFloat(document.getElementById('actions').value) || 0;
+            const assurance = parseFloat(document.getElementById('assurance').value) || 0;
+            const restaurants = parseFloat(document.getElementById('restaurants').value) || 0;
+            const courses = parseFloat(document.getElementById('courses').value) || 0;
+            const internet = parseFloat(document.getElementById('internet').value) || 0;
+            const sport = parseFloat(document.getElementById('sport').value) || 0;
+
+            const logement = loyer + charges;
+            const investissements = actions + assurance;
+            const vieQuotidienne = restaurants + courses;
+            const abonnements = internet + sport;
+
+            d3.select("#chart").html("");
+
+            const data = {
+                nodes: [
+                    { name: `Salaire: ${salaire} FCFA` },
+                    { name: `Budget: ${salaire} FCFA` },
+                    { name: `Logement: ${logement} FCFA` },
+                    { name: `Vie quotidienne: ${vieQuotidienne} FCFA` },
+                    { name: `Investissements: ${investissements} FCFA` },
+                    { name: `Abonnements: ${abonnements} FCFA` },
+                    { name: `Loyer: ${loyer} FCFA` },
+                    { name: `Charges: ${charges} FCFA` },
+                    { name: `Actions: ${actions} FCFA` },
+                    { name: `Assurance vie: ${assurance} FCFA` },
+                    { name: `Restaurants: ${restaurants} FCFA` },
+                    { name: `Courses: ${courses} FCFA` },
+                    { name: `Internet/Téléphone: ${internet} FCFA` },
+                    { name: `Sport: ${sport} FCFA` }
+                ],
+                links: []
+            };
+
+            if (salaire > 0) {
+                data.links.push({ source: 0, target: 1, value: salaire });
+                
+                if (logement > 0) data.links.push({ source: 1, target: 2, value: logement });
+                if (vieQuotidienne > 0) data.links.push({ source: 1, target: 3, value: vieQuotidienne });
+                if (investissements > 0) data.links.push({ source: 1, target: 4, value: investissements });
+                if (abonnements > 0) data.links.push({ source: 1, target: 5, value: abonnements });
+                
+                if (loyer > 0) data.links.push({ source: 2, target: 6, value: loyer });
+                if (charges > 0) data.links.push({ source: 2, target: 7, value: charges });
+                if (actions > 0) data.links.push({ source: 4, target: 8, value: actions });
+                if (assurance > 0) data.links.push({ source: 4, target: 9, value: assurance });
+                if (restaurants > 0) data.links.push({ source: 3, target: 10, value: restaurants });
+                if (courses > 0) data.links.push({ source: 3, target: 11, value: courses });
+                if (internet > 0) data.links.push({ source: 5, target: 12, value: internet });
+                if (sport > 0) data.links.push({ source: 5, target: 13, value: sport });
+            }
+
+            const margin = { top: 10, right: 200, bottom: 10, left: 10 };
+            const width = 1400 - margin.left - margin.right;
+            const height = 600 - margin.top - margin.bottom;
+
+            const svg = d3.select("#chart")
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            const sankey = d3.sankey()
+                .nodeWidth(15)
+                .nodePadding(20)
+                .extent([[1, 1], [width - 1, height - 5]]);
+
+            const { nodes, links } = sankey({
+                nodes: data.nodes.map(d => Object.assign({}, d)),
+                links: data.links.map(d => Object.assign({}, d))
+            });
+
+            svg.append("g")
+                .selectAll(".link")
+                .data(links)
+                .join("path")
+                .attr("class", "link")
+                .attr("d", d3.sankeyLinkHorizontal())
+                .attr("stroke", d => colors[d.source.index])
+                .attr("stroke-width", d => Math.max(1, d.width));
+
+            const node = svg.append("g")
+                .selectAll(".node")
+                .data(nodes)
+                .join("g")
+                .attr("class", "node");
+
+            node.append("rect")
+                .attr("x", d => d.x0)
+                .attr("y", d => d.y0)
+                .attr("height", d => d.y1 - d.y0)
+                .attr("width", d => d.x1 - d.x0)
+                .attr("fill", (d, i) => colors[i])
+                .append("title")
+                .text(d => `${d.name}`);
+
+            node.append("text")
+                .attr("x", d => d.x0 < width / 2 ? d.x1 + 6 : d.x0 - 6)
+                .attr("y", d => (d.y1 + d.y0) / 2)
+                .attr("dy", "0.35em")
+                .attr("text-anchor", d => d.x0 < width / 2 ? "start" : "end")
+                .text(d => d.name)
+                .style("fill", "#333");
+        }
+
+        window.onload = generateChart;
+    </script> -->
+    <script>
+        const colors = [
+            "#6BA3D4", "#E89F71", "#D4A5C4", "#8BB5A0", "#F4B5C7",
+            "#A8CEDC", "#E5C3A6", "#C4B5D4", "#B5D4C4", "#F4D4B5",
+            "#D4C4E5", "#B5E5D4", "#E5D4C4", "#D4E5C4"
+        ];
+
+        function formatCFA(value) {
+            return new Intl.NumberFormat('fr-FR').format(value) + ' FCFA';
+        }
+
+        function generateChart() {
+            // Récupérer les valeurs du formulaire
+            const salaire = parseFloat(document.getElementById('salaire').value) || 0;
+            const loyer = parseFloat(document.getElementById('loyer').value) || 0;
+            const charges = parseFloat(document.getElementById('charges').value) || 0;
+            const actions = parseFloat(document.getElementById('actions').value) || 0;
+            const assurance = parseFloat(document.getElementById('assurance').value) || 0;
+            const restaurants = parseFloat(document.getElementById('restaurants').value) || 0;
+            const courses = parseFloat(document.getElementById('courses').value) || 0;
+            const internet = parseFloat(document.getElementById('internet').value) || 0;
+            const sport = parseFloat(document.getElementById('sport').value) || 0;
+
+            // Calculer les totaux
+            const logement = loyer + charges;
+            const investissements = actions + assurance;
+            const vieQuotidienne = restaurants + courses;
+            const abonnements = internet + sport;
+
+            // Vider le graphique existant
+            d3.select("#chart").html("");
+
+            // Créer les données
+            const data = {
+                nodes: [
+                    { name: `Salaire: ${formatCFA(salaire)}` },
+                    { name: `Budget: ${formatCFA(salaire)}` },
+                    { name: `Logement: ${formatCFA(logement)}` },
+                    { name: `Vie quotidienne: ${formatCFA(vieQuotidienne)}` },
+                    { name: `Investissements: ${formatCFA(investissements)}` },
+                    { name: `Abonnements: ${formatCFA(abonnements)}` },
+                    { name: `Loyer: ${formatCFA(loyer)}` },
+                    { name: `Charges: ${formatCFA(charges)}` },
+                    { name: `Actions: ${formatCFA(actions)}` },
+                    { name: `Assurance vie: ${formatCFA(assurance)}` },
+                    { name: `Restaurants: ${formatCFA(restaurants)}` },
+                    { name: `Courses: ${formatCFA(courses)}` },
+                    { name: `Internet/Téléphone: ${formatCFA(internet)}` },
+                    { name: `Sport: ${formatCFA(sport)}` }
+                ],
+                links: []
+            };
+
+            // Créer les liens seulement si les valeurs sont > 0
+            if (salaire > 0) {
+                data.links.push({ source: 0, target: 1, value: salaire });
+                
+                if (logement > 0) data.links.push({ source: 1, target: 2, value: logement });
+                if (vieQuotidienne > 0) data.links.push({ source: 1, target: 3, value: vieQuotidienne });
+                if (investissements > 0) data.links.push({ source: 1, target: 4, value: investissements });
+                if (abonnements > 0) data.links.push({ source: 1, target: 5, value: abonnements });
+                
+                if (loyer > 0) data.links.push({ source: 2, target: 6, value: loyer });
+                if (charges > 0) data.links.push({ source: 2, target: 7, value: charges });
+                if (actions > 0) data.links.push({ source: 4, target: 8, value: actions });
+                if (assurance > 0) data.links.push({ source: 4, target: 9, value: assurance });
+                if (restaurants > 0) data.links.push({ source: 3, target: 10, value: restaurants });
+                if (courses > 0) data.links.push({ source: 3, target: 11, value: courses });
+                if (internet > 0) data.links.push({ source: 5, target: 12, value: internet });
+                if (sport > 0) data.links.push({ source: 5, target: 13, value: sport });
+            }
+
+            // Dimensions
+            const margin = { top: 10, right: 250, bottom: 10, left: 10 };
+            const width = 1400 - margin.left - margin.right;
+            const height = 600 - margin.top - margin.bottom;
+
+            // Créer le SVG
+            const svg = d3.select("#chart")
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            // Créer le générateur Sankey
+            const sankey = d3.sankey()
+                .nodeWidth(15)
+                .nodePadding(20)
+                .extent([[1, 1], [width - 1, height - 5]]);
+
+            // Générer le graphe
+            const { nodes, links } = sankey({
+                nodes: data.nodes.map(d => Object.assign({}, d)),
+                links: data.links.map(d => Object.assign({}, d))
+            });
+
+            // Dessiner les liens
+            svg.append("g")
+                .selectAll(".link")
+                .data(links)
+                .join("path")
+                .attr("class", "link")
+                .attr("d", d3.sankeyLinkHorizontal())
+                .attr("stroke", d => colors[d.source.index])
+                .attr("stroke-width", d => Math.max(1, d.width));
+
+            // Dessiner les nœuds
+            const node = svg.append("g")
+                .selectAll(".node")
+                .data(nodes)
+                .join("g")
+                .attr("class", "node");
+
+            node.append("rect")
+                .attr("x", d => d.x0)
+                .attr("y", d => d.y0)
+                .attr("height", d => d.y1 - d.y0)
+                .attr("width", d => d.x1 - d.x0)
+                .attr("fill", (d, i) => colors[i])
+                .append("title")
+                .text(d => `${d.name}`);
+
+            // Ajouter les labels
+            node.append("text")
+                .attr("x", d => d.x0 < width / 2 ? d.x1 + 6 : d.x0 - 6)
+                .attr("y", d => (d.y1 + d.y0) / 2)
+                .attr("dy", "0.35em")
+                .attr("text-anchor", d => d.x0 < width / 2 ? "start" : "end")
+                .text(d => d.name)
+                .style("fill", "#333");
+        }
+
+        // Générer le diagramme au chargement de la page
+        window.onload = generateChart;
+
+        function exportAsPNG() {
+         
+         
+            const svgElement = document.querySelector('#chart svg');
+            if (!svgElement) {
+                alert('Veuillez d\'abord générer le diagramme');
+                return;
+            }
+
+            const svgData = new XMLSerializer().serializeToString(svgElement);
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+
+            canvas.width = svgElement.width.baseVal.value;
+            canvas.height = svgElement.height.baseVal.value;
+
+            img.onload = function() {
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0);
+                
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'flux-tresorerie-' + new Date().getTime() + '.png';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                });
+            };
+
+            img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgData)));
+        }
+
+        function exportAsSVG() {
+            const svgElement = document.querySelector('#chart svg');
+            if (!svgElement) {
+                alert('Veuillez d\'abord générer le diagramme');
+                return;
+            }
+
+            const svgData = new XMLSerializer().serializeToString(svgElement);
+            const blob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'flux-tresorerie-' + new Date().getTime() + '.svg';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
