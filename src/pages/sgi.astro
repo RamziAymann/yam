@@ -1,0 +1,877 @@
+---
+// src/pages/sgi.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/ui/Header.astro';
+import Footer from '../components/ui/Footer.astro';
+---
+
+<Layout>
+  <Header />
+  
+  <main class="sgi-page">
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Comparatif des Sociétés de Gestion et d'Intermédiation Financière (SGI) au Burkina Faso</h1>
+        <p>Découvrez les principaux acteurs du courtage et de l'investissement boursier</p>
+        <div class="hero-badge">
+          <span class="badge">📊 Données mises à jour : 2024</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="introduction">
+      <div class="container">
+        <div class="intro-card">
+          <h2>🏦 Guide des SGI Burkinabè</h2>
+          <p>Les Sociétés de Gestion et d'Intermédiation Financière (SGI) sont vos partenaires pour investir en bourse, gérer votre portefeuille et accéder aux marchés financiers ouest-africains.</p>
+          <div class="info-tips">
+            <div class="tip">
+              <span class="tip-icon">💡</span>
+              <span>Idéal pour les particuliers et PME souhaitant investir sur la BRVM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tableau Comparatif -->
+    <section class="comparison-section">
+      <div class="container">
+        <h2 class="section-title">📋 Comparatif des SGI au Burkina Faso</h2>
+        
+        <div class="sgi-table-container">
+          <div class="table-scroll-wrapper">
+            <table class="sgi-comparison-table">
+              <thead>
+                <tr>
+                  <th class="sgi-name">SGI (Burkina)</th>
+                  <th class="sgi-year">Année création / Statut</th>
+                  <th class="sgi-services">Services principaux</th>
+                  <th class="sgi-minimum">Montant minimum d'ouverture</th>
+                  <th class="sgi-strengths">Points forts / Spécialités</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- SBIF -->
+                <tr class="sgi-row">
+                  <td class="sgi-name">
+                    <div class="sgi-header">
+                      <!-- <div class="sgi-logo-placeholder">🏛️</div> -->
+                      <div class="sgi-title">
+                        <h3>Société Burkinabè d'Intermédiation Financière (SBIF)</h3>
+                        <div class="sgi-rating">
+                          <!-- <span class="rating-stars">★★★★☆</span> -->
+                          <span class="rating-text">Expérimenté</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="sgi-year">
+                    <div>
+                      <span class="year">1998</span>
+                      <span class="status">Première SGI burkinabè</span>
+                    </div>
+                  </td>
+                  <td class="sgi-services">
+                    <ul class="services-list">
+                      <li>🏛️ Courtage (négociation en Bourse)</li>
+                      <li>📊 Tenue de compte</li>
+                      <li>💼 Placement d'actions/obligations</li>
+                      <li>🏦 Banques d'affaires</li>
+                      <li>🤝 Gestion sous mandat</li>
+                      <li>🎯 Conseil financier</li>
+                    </ul>
+                  </td>
+                  <td class="sgi-minimum">
+                    <div class="minimum-amount highlighted">
+                      <span class="amount">300 000 FCFA</span>
+                      <span class="note">Montant indiqué sur fiche locale</span>
+                    </div>
+                  </td>
+                  <td class="sgi-strengths">
+                    <div class="strengths-list">
+                      <div class="strength-item">
+                        <span class="strength-icon">⭐</span>
+                        <span>Expérience historique sur le marché ouest-africain</span>
+                      </div>
+                      <div class="strength-item">
+                        <span class="strength-icon">🚀</span>
+                        <span>Introductions en bourse et placement d'obligations</span>
+                      </div>
+                      <div class="strength-item">
+                        <span class="strength-icon">🏢</span>
+                        <span>Idéal pour opérations institutionnelles et PME</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Coris Bourse -->
+                <tr class="sgi-row">
+                  <td class="sgi-name">
+                    <div class="sgi-header">
+                      <!-- <div class="sgi-logo-placeholder">💼</div> -->
+                      <div class="sgi-title">
+                        <h3>Coris Bourse S.A.</h3>
+                        <div class="sgi-rating">
+                          <!-- <span class="rating-stars">★★★★☆</span> -->
+                          <span class="rating-text">Moderne</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="sgi-year">
+                    <div>
+                      <span class="year">2010</span>
+                      <span class="status">Filiale du groupe Coris</span>
+                    </div>
+                  </td>
+                  <td class="sgi-services">
+                    <ul class="services-list">
+                      <li>💻 Courtage en ligne</li>
+                      <li>📈 Gestion de portefeuille</li>
+                      <li>🏦 Tenue de compte & conservation</li>
+                      <li>🌐 Plateforme bourse en ligne</li>
+                      <li>💰 Placements diversifiés</li>
+                      <li>🎓 Conseil et formation</li>
+                    </ul>
+                  </td>
+                  <td class="sgi-minimum">
+                    <div class="minimum-amount">
+                      <span class="amount">100 000 FCFA</span>
+                      <span class="note">Montant indiqué sur fiche locale</span>
+                    </div>
+                  </td>
+                  <td class="sgi-strengths">
+                    <div class="strengths-list">
+                      <div class="strength-item">
+                        <span class="strength-icon">🏷️</span>
+                        <span>Forte image de marque locale</span>
+                      </div>
+                      <div class="strength-item">
+                        <span class="strength-icon">📱</span>
+                        <span>Offre de bourse en ligne avancée</span>
+                      </div>
+                      <div class="strength-item">
+                        <span class="strength-icon">👨‍👩‍👧‍👦</span>
+                        <span>Services adaptés aux particuliers</span>
+                      </div>
+                      <div class="strength-item">
+                        <span class="strength-icon">💸</span>
+                        <span>Mobilisations importantes de capitaux</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- SA2IF -->
+                <tr class="sgi-row">
+                  <td class="sgi-name">
+                    <div class="sgi-header">
+                      <!-- <div class="sgi-logo-placeholder">🆕</div> -->
+                      <div class="sgi-title">
+                        <h3>SA2IF</h3>
+                        <div class="sgi-subtitle">Société Africaine d'Ingénierie et d'Intermédiation Financière</div>
+                        <div class="sgi-rating">
+                          <!-- <span class="rating-stars">★★★☆☆</span> -->
+                          <span class="rating-text">Nouveau</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="sgi-year">
+                    <div>
+                      <span class="year">2022</span>
+                      <span class="status">Nouvel acteur</span>
+                    </div>
+                  </td>
+                  <td class="sgi-services">
+                    <ul class="services-list">
+                      <li>🤝 Intermédiation financière</li>
+                      <li>💡 Conseil financier</li>
+                      <li>🏗️ Ingénierie financière</li>
+                      <li>📊 Levées de fonds</li>
+                      <li>🎯 Placements stratégiques</li>
+                    </ul>
+                  </td>
+                  <td class="sgi-minimum">
+                    <div class="minimum-amount unknown">
+                      <span class="amount">Non spécifié</span>
+                      <span class="note">Site/presse consultés</span>
+                    </div>
+                  </td>
+                  <td class="sgi-strengths">
+                    <div class="strengths-list">
+                      <div class="strength-item">
+                        <span class="strength-icon">🎯</span>
+                        <span>Positionnement récent sur le marché</span>
+                      </div>
+                      <div class="strength-item">
+                        <span class="strength-icon">🏗️</span>
+                        <span>Focus conseil & ingénierie financière</span>
+                      </div>
+                      <div class="strength-item">
+                        <span class="strength-icon">🚀</span>
+                        <span>Spécialisé levées/placements entreprises</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Image Finances International -->
+                <tr class="sgi-row">
+                  <td class="sgi-name">
+                    <div class="sgi-header">
+                      <!-- <div class="sgi-logo-placeholder">🌍</div> -->
+                      <div class="sgi-title">
+                        <h3>Image Finances International (IFI)</h3>
+                        <div class="sgi-rating">
+                          <!-- <span class="rating-stars">★★★☆☆</span> -->
+                          <span class="rating-text">Récemment</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="sgi-year">
+                    <div>
+                      <span class="year">2024</span>
+                      <span class="status">Entrée récente</span>
+                    </div>
+                  </td>
+                  <td class="sgi-services">
+                    <ul class="services-list">
+                      <li>📊 Services de SGI classiques</li>
+                      <li>💼 Courtage</li>
+                      <li>🏦 Tenue de compte</li>
+                      <li>🎯 Conseil financier</li>
+                      <li>📈 Gestion de portefeuille</li>
+                    </ul>
+                  </td>
+                  <td class="sgi-minimum">
+                    <div class="minimum-amount unknown">
+                      <span class="amount">Non spécifié</span>
+                      <span class="note">Site/presse consultés</span>
+                    </div>
+                  </td>
+                  <td class="sgi-strengths">
+                    <div class="strengths-list">
+                      <div class="strength-item">
+                        <span class="strength-icon">🆕</span>
+                        <span>Nouvel entrant sur le marché</span>
+                      </div>
+                      <div class="strength-item">
+                        <span class="strength-icon">💎</span>
+                        <span>Offres potentiellement compétitives</span>
+                      </div>
+                      <div class="strength-item">
+                        <span class="strength-icon">🎯</span>
+                        <span>Cible particuliers et PME</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Légende et notes -->
+        <div class="table-notes">
+          <div class="notes-grid">
+            <div class="note-item">
+              <span class="note-indicator new"></span>
+              <span>Nouvel entrant sur le marché</span>
+            </div>
+            <div class="note-item">
+              <span class="note-indicator experienced"></span>
+              <span>Acteur expérimenté</span>
+            </div>
+            <div class="note-item">
+              <span class="note-indicator modern"></span>
+              <span>Solutions modernes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommandations par profil -->
+    <section class="recommendations">
+      <div class="container">
+        <h2 class="section-title">🎯 Quelle SGI choisir selon votre profil ?</h2>
+        
+        <div class="recommendation-cards">
+          <!-- Profil Débutant -->
+          <div class="profile-card">
+            <div class="profile-header">
+              <div class="profile-icon">👶</div>
+              <h3>Débutant en bourse</h3>
+            </div>
+            <div class="profile-content">
+              <p><strong>Coris Bourse recommandée</strong></p>
+              <ul>
+                <li>✅ Montant minimum accessible (100 000 FCFA)</li>
+                <li>✅ Plateforme en ligne intuitive</li>
+                <li>✅ Services de formation et conseil</li>
+                <li>✅ Bon accompagnement pour premiers pas</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Profil Investisseur confirmé -->
+          <div class="profile-card">
+            <div class="profile-header">
+              <div class="profile-icon">💼</div>
+              <h3>Investisseur confirmé / PME</h3>
+            </div>
+            <div class="profile-content">
+              <p><strong>SBIF recommandée</strong></p>
+              <ul>
+                <li>✅ Expérience historique solide</li>
+                <li>✅ Expert en introductions en bourse</li>
+                <li>✅ Accompagnement institutionnel</li>
+                <li>✅ Solutions pour levées de fonds</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Profil Entreprise -->
+          <div class="profile-card">
+            <div class="profile-header">
+              <div class="profile-icon">🏢</div>
+              <h3>Entreprise / Projet spécifique</h3>
+            </div>
+            <div class="profile-content">
+              <p><strong>SA2IF ou IFI</strong></p>
+              <ul>
+                <li>✅ Approche sur mesure</li>
+                <li>✅ Ingénierie financière spécialisée</li>
+                <li>✅ Solutions innovantes</li>
+                <li>✅ Tarifs potentiellement compétitifs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guide de démarrage -->
+    <section class="getting-started">
+      <div class="container">
+        <div class="guide-card">
+          <h2>🚀 Comment commencer à investir avec une SGI ?</h2>
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Choisissez votre SGI</h4>
+                <p>Selon votre profil et vos objectifs d'investissement</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Ouvrez un compte</h4>
+                <p>Préparez vos pièces d'identité et le montant minimum requis</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Définissez votre stratégie</h4>
+                <p>Avec l'aide de votre conseiller SGI</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>Passez vos premiers ordres</h4>
+                <p>Et suivez vos investissements</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="final-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Prêt à investir en bourse ?</h2>
+          <p>Comparez en détail les offres et trouvez la SGI qui correspond à vos ambitions</p>
+          <div class="cta-buttons">
+            <a href="#contact-sgi" class="cta-button primary">Contacter une SGI</a>
+            <a href="#guide" class="cta-button secondary">Guide d'investissement</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</main>
+
+<style>
+  @import '../styles/variables.css';
+
+  .sgi-page {
+    background-color: var(--light);
+  }
+
+  /* Hero Section */
+  .page-hero {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .page-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-badge .badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Introduction */
+  .introduction {
+    padding: 3rem 0;
+  }
+
+  .intro-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary);
+  }
+
+  .intro-card h2 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+
+  .info-tips {
+    margin-top: 1.5rem;
+  }
+
+  .tip {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: var(--text);
+  }
+
+  .tip-icon {
+    font-size: 1.2rem;
+  }
+
+  /* Tableau Comparatif */
+  .comparison-section {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dark);
+  }
+
+  .sgi-table-container {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .table-scroll-wrapper {
+    overflow-x: auto;
+  }
+
+  .sgi-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+  }
+
+  .sgi-comparison-table th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 1.5rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary-dark);
+  }
+
+  .sgi-comparison-table td {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: top;
+  }
+
+  .sgi-row:nth-child(even) {
+    background: #f8f9fa;
+  }
+
+  .sgi-row:hover {
+    background: #e8f5e8;
+  }
+
+  /* En-tête SGI */
+  .sgi-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .sgi-logo-placeholder {
+    font-size: 2rem;
+    background: var(--light);
+    padding: 0.5rem;
+    border-radius: 8px;
+    min-width: 50px;
+    text-align: center;
+  }
+
+  .sgi-title h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--dark);
+    font-size: 1.1rem;
+  }
+
+  .sgi-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .sgi-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .rating-stars {
+    color: #ffc107;
+  }
+
+  .rating-text {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    background: var(--light);
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+  }
+
+  /* Année de création */
+  .year-badge {
+    text-align: center;
+    padding: 0.8rem;
+    background: var(--light);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+  }
+
+  .year-badge.new {
+    border-left-color: var(--accent);
+  }
+
+  .year {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--dark);
+  }
+
+  .status {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.3rem;
+  }
+
+  /* Services */
+  .services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .services-list li {
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+  }
+
+  /* Montant minimum */
+  .minimum-amount {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--light);
+  }
+
+  .minimum-amount.highlighted {
+    background: #e8f5e8;
+    border: 1px solid var(--primary-light);
+  }
+
+  .minimum-amount.unknown {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+  }
+
+  .amount {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--dark);
+  }
+
+  .note {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.3rem;
+  }
+
+  /* Points forts */
+  .strengths-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .strength-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .strength-icon {
+    font-size: 0.9rem;
+    margin-top: 0.1rem;
+  }
+
+  /* Notes du tableau */
+  .table-notes {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+  }
+
+  .notes-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .note-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .note-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .note-indicator.new {
+    background: var(--accent);
+  }
+
+  .note-indicator.experienced {
+    background: var(--primary);
+  }
+
+  .note-indicator.modern {
+    background: var(--secondary);
+  }
+
+  /* Recommandations par profil */
+  .recommendations {
+    padding: 3rem 0;
+  }
+
+  .recommendation-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .profile-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+  }
+
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .profile-icon {
+    font-size: 2rem;
+  }
+
+  .profile-header h3 {
+    margin: 0;
+    color: var(--dark);
+  }
+
+  .profile-content ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .profile-content li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f8f9fa;
+  }
+
+  /* Guide de démarrage */
+  .getting-started {
+    padding: 3rem 0;
+  }
+
+  .guide-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .step-content h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--dark);
+  }
+
+  .step-content p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+
+  /* CTA Final */
+  .final-cta {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .cta-button {
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+
+  .cta-button.primary {
+    background: var(--white);
+    color: var(--primary);
+  }
+
+  .cta-button.secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .sgi-comparison-table {
+      font-size: 0.9rem;
+    }
+
+    .sgi-header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .recommendation-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .steps {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-hero h1 {
+      font-size: 1.8rem;
+    }
+
+    .notes-grid {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+</style>

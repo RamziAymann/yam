@@ -1,0 +1,656 @@
+---
+// src/pages/box-internet.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/ui/Header.astro';
+import Footer from '../components/ui/Footer.astro';
+
+const pageTitle = "Comparatif Box Internet Burkina Faso 2024 - Orange vs Canalbox";
+const pageDescription = "Découvrez le comparatif complet des box internet au Burkina Faso. Analyse détaillée Orange et Canalbox : prix, débits, engagement, et nos recommandations par usage.";
+---
+
+<Layout>
+    <Fragment slot="title">{pageTitle}</Fragment>
+  <Fragment slot="description">{pageDescription}</Fragment>
+  <Header />
+  
+  <main class="box-internet-page">
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Comparatif des Box Internet au Burkina Faso</h1>
+        <p>Découvrez quelle box internet choisir selon vos besoins et votre budget</p>
+        <!-- <div class="hero-badge">
+          <span class="badge">🔄 Mise à jour : Novembre 2024</span>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="introduction">
+      <div class="container">
+        <div class="intro-card">
+          <h2>📊 Notre analyse comparative</h2>
+          <p>Nous comparons en détail les offres <strong>Orange</strong> et <strong>Canalbox</strong> pour vous aider à faire le meilleur choix selon votre usage (streaming, télétravail, gaming, etc.)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tableau Comparatif -->
+    <section class="comparison-section">
+      <div class="container">
+        <h2 class="section-title">📋 Tableau comparatif détaillé</h2>
+        
+        <div class="comparison-table">
+          <!-- En-tête du tableau -->
+          <div class="table-header">
+            <div class="criteria-col">Critères de comparaison</div>
+            <div class="provider-col">
+              <div class="provider-card">
+                <h3>Orange Burkina</h3>
+              </div>
+            </div>
+            <div class="provider-col">
+              <div class="provider-card">
+                <h3>Canalbox</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ligne 1 : Débit -->
+          <div class="table-row">
+            <div class="criteria-col">
+              <div class="criteria-info">
+                <h4>🚀 Débit Internet</h4>
+                <p>Vitesse de téléchargement maximale</p>
+              </div>
+            </div>
+            <div class="provider-col">
+              <div class="feature-value">
+                <span class="value-highlight">Jusqu'à 300 Mb/s</span>
+                <p class="value-desc">Formules résidentielles variables</p>
+              </div>
+            </div>
+            <div class="provider-col">
+              <div class="feature-value">
+                <div class="plan-options">
+                  <div class="plan-option">
+                    <span class="plan-name">Start</span>
+                    <span class="value-highlight">50 Mb/s</span>
+                  </div>
+                  <div class="plan-option">
+                    <span class="plan-name">Premium</span>
+                    <span class="value-highlight">200 Mb/s</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ligne 2 : Tarifs -->
+          <div class="table-row">
+            <div class="criteria-col">
+              <div class="criteria-info">
+                <h4>💰 Tarifs mensuels</h4>
+                <p>Prix public TTC</p>
+              </div>
+            </div>
+            <div class="provider-col">
+              <div class="feature-value">
+                <div class="price-range">
+                  <span class="price-from">À partir de</span>
+                  <span class="price-amount">14 900 FCFA</span>
+                  <span class="price-to">jusqu'à 69 900 FCFA</span>
+                </div>
+                <p class="value-desc">Selon la ville et le débit</p>
+              </div>
+            </div>
+            <div class="provider-col">
+              <div class="feature-value">
+                <div class="plan-options">
+                  <div class="plan-option">
+                    <span class="plan-name">Start</span>
+                    <span class="price-amount">15 000 FCFA</span>
+                  </div>
+                  <div class="plan-option">
+                    <span class="plan-name">Premium</span>
+                    <span class="price-amount">30 000 FCFA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ligne 3 : Installation -->
+          <div class="table-row">
+            <div class="criteria-col">
+              <div class="criteria-info">
+                <h4>🔧 Installation & Équipement</h4>
+                <p>Coûts initiaux et matériel</p>
+              </div>
+            </div>
+            <div class="provider-col">
+              <div class="feature-value">
+                <span class="value-text">Box dernière génération</span>
+                <p class="value-desc">Ports Ethernet & WiFi AC</p>
+              </div>
+            </div>
+            <div class="provider-col">
+              <div class="feature-value">
+                <span class="value-text">Installation : 10 000 FCFA</span>
+                <p class="value-desc">Pour l'offre Start</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ligne 4 : Couverture -->
+          <div class="table-row">
+            <div class="criteria-col">
+              <div class="criteria-info">
+                <h4>🗺️ Couverture géographique</h4>
+                <p>Villes desservies</p>
+              </div>
+            </div>
+            <div class="provider-col">
+              <div class="feature-value">
+                <div class="cities-list">
+                  <span class="city-tag">Ouagadougou</span>
+                  <span class="city-tag">Bobo-Dioulasso</span>
+                  <span class="city-tag">Koudougou</span>
+                  <span class="city-tag">Kaya</span>
+                </div>
+              </div>
+            </div>
+            <div class="provider-col">
+              <div class="feature-value">
+                <span class="value-text">Éligibilité à vérifier</span>
+                <p class="value-desc">Test d'éligibilité en ligne</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ligne 5 : Engagement -->
+          <div class="table-row">
+            <div class="criteria-col">
+              <div class="criteria-info">
+                <h4>⏱️ Engagement & Résiliation</h4>
+                <p>Conditions contractuelles</p>
+              </div>
+            </div>
+            <div class="provider-col">
+              <div class="feature-value">
+                <div class="warning-badge">
+                  <span class="warning-icon">⚠️</span>
+                  <span>Pénalité 1ère année</span>
+                </div>
+                <p class="value-desc">2 mois de forfait si résiliation anticipée</p>
+              </div>
+            </div>
+            <div class="provider-col">
+              <div class="feature-value">
+                <div class="success-badge">
+                  <span class="success-icon">✅</span>
+                  <span>Sans engagement</span>
+                </div>
+                <p class="value-desc">Flexibilité maximale</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommandations -->
+    <section class="recommendations">
+      <div class="container">
+        <h2 class="section-title">🎯 Nos recommandations par usage</h2>
+        
+        <div class="recommendation-cards">
+          <!-- Carte Budget -->
+          <div class="recommendation-card budget">
+            <div class="card-header">
+              <div class="card-icon">💰</div>
+              <h3>Pour un budget maîtrisé</h3>
+            </div>
+            <div class="card-content">
+              <p><strong>Canalbox Start à 15 000 FCFA/mois</strong></p>
+              <ul>
+                <li>✅ Débit 50 Mb/s suffisant pour usage standard</li>
+                <li>✅ Sans engagement</li>
+                <li>✅ Installation à 10 000 FCFA</li>
+              </ul>
+              <div class="card-verdict">
+                <span class="verdict-badge">Meilleur rapport qualité-prix</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carte Performance -->
+          <div class="recommendation-card performance">
+            <div class="card-header">
+              <div class="card-icon">🚀</div>
+              <h3>Pour les usages intensifs</h3>
+            </div>
+            <div class="card-content">
+              <p><strong>Orange ou Canalbox Premium</strong></p>
+              <ul>
+                <li>✅ Débit 200-300 Mb/s pour usage professionnel</li>
+                <li>✅ Support de nombreux appareils simultanés</li>
+                <li>✅ Idéal pour visioconférence, gaming, domotique</li>
+              </ul>
+              <div class="card-verdict">
+                <span class="verdict-badge">Performance maximale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carte Flexibilité -->
+          <div class="recommendation-card flexibility">
+            <div class="card-header">
+              <div class="card-icon">🔄</div>
+              <h3>Pour la flexibilité</h3>
+            </div>
+            <div class="card-content">
+              <p><strong>Canalbox - Sans engagement</strong></p>
+              <ul>
+                <li>✅ Possibilité de résilier à tout moment</li>
+                <li>✅ Parfait pour les locations courtes durées</li>
+                <li>✅ Adaptation facile à l'évolution des besoins</li>
+              </ul>
+              <div class="card-verdict">
+                <span class="verdict-badge">Maximum de flexibilité</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="final-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Prêt à choisir votre box internet ?</h2>
+          <p>Utilisez notre comparateur en direct pour une analyse personnalisée</p>
+          <div class="cta-buttons">
+            <a href="#comparateur" class="cta-button primary">Tester l'éligibilité</a>
+            <a href="#contact" class="cta-button secondary">Contacter un conseiller</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</main>
+
+<style>
+  @import '../styles/variables.css';
+
+  /* Styles de la page */
+  .box-internet-page {
+    background-color: var(--light);
+  }
+
+  /* Hero Section */
+  .page-hero {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .page-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-badge .badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Introduction */
+  .introduction {
+    padding: 3rem 0;
+  }
+
+  .intro-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    border-left: 4px solid var(--primary);
+  }
+
+  .intro-card h2 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+
+  /* Tableau Comparatif */
+  .comparison-section {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dark);
+  }
+
+  .comparison-table {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .table-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: var(--primary);
+    color: var(--white);
+    padding: 1.5rem;
+  }
+
+  .provider-card {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .provider-card.orange {
+    background: rgba(255, 165, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  .provider-card.canalbox {
+    background: rgba(30, 144, 255, 0.1);
+    border-radius: 8px;
+  }
+
+  .provider-logo {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .provider-rating {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  .table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    align-items: start;
+  }
+
+  .table-row:nth-child(even) {
+    background: #f8f9fa;
+  }
+
+  .criteria-info h4 {
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+  }
+
+  .criteria-info p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+
+  .feature-value {
+    text-align: center;
+  }
+
+  .value-highlight {
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1.1rem;
+  }
+
+  .value-desc {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .plan-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .plan-option {
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+  }
+
+  .plan-name {
+    display: block;
+    font-weight: 500;
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+
+  .price-range {
+    margin-bottom: 0.5rem;
+  }
+
+  .price-from, .price-to {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+
+  .price-amount {
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1.2rem;
+  }
+
+  .cities-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .city-tag {
+    background: var(--light);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: var(--text);
+  }
+
+  .warning-badge, .success-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .warning-badge {
+    background: #fff3cd;
+    color: #856404;
+  }
+
+  .success-badge {
+    background: #d1edff;
+    color: var(--primary-dark);
+  }
+
+  /* Recommandations */
+  .recommendations {
+    padding: 3rem 0;
+  }
+
+  .recommendation-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .recommendation-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border-top: 4px solid transparent;
+  }
+
+  .recommendation-card.budget {
+    border-top-color: #28a745;
+  }
+
+  .recommendation-card.performance {
+    border-top-color: #ffc107;
+  }
+
+  .recommendation-card.flexibility {
+    border-top-color: #17a2b8;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+  }
+
+  .card-content ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .card-content li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f8f9fa;
+  }
+
+  .card-verdict {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  .verdict-badge {
+    background: var(--primary);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  /* Checklist */
+  .checklist-section {
+    padding: 3rem 0;
+  }
+
+  .checklist-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+  }
+
+  .checklist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  .check-icon {
+    color: var(--primary);
+    font-size: 1.2rem;
+  }
+
+  /* CTA Final */
+  .final-cta {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .cta-button {
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+
+  .cta-button.primary {
+    background: var(--white);
+    color: var(--primary);
+  }
+
+  .cta-button.secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .table-header,
+    .table-row {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .recommendation-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-hero h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

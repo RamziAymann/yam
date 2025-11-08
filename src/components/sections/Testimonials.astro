@@ -1,0 +1,86 @@
+---
+// src/components/sections/Testimonials.astro
+import { TESTIMONIALS } from '../../utils/constants';
+---
+
+<section class="testimonials">
+  <div class="container">
+    <div class="section-title">
+      <h2>Ce que disent nos utilisateurs</h2>
+      <p>Découvrez les expériences de ceux qui ont déjà utilisé notre comparateur</p>
+    </div>
+    <div class="testimonial-grid">
+      {
+        TESTIMONIALS.map(testimonial => (
+          <div class="testimonial-card">
+            <p class="testimonial-text">"{testimonial.text}"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">{testimonial.initials}</div>
+              <div class="author-info">
+                <h4>{testimonial.author}</h4>
+                <p>{testimonial.location}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  @import '../../styles/variables.css';
+
+  .testimonials {
+    padding: 5rem 0;
+    background-color: var(--white);
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .testimonial-card {
+    background-color: var(--light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+  }
+
+  .testimonial-text {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+  }
+
+  .author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: bold;
+  }
+
+  .author-info h4 {
+    margin-bottom: 0.2rem;
+    color: var(--dark);
+  }
+
+  .author-info p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+</style>

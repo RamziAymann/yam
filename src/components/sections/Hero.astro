@@ -1,0 +1,59 @@
+---
+// src/components/sections/Hero.astro
+---
+
+<section class="hero">
+  <div class="container">
+    <h1>Comparez et économisez sur vos services au Burkina Faso</h1>
+    <p>Yam vous aide à trouver les meilleures offres d'énergie, box internet, services financiers et immobilier adaptés à vos besoins.</p>
+    <div class="hero-buttons">
+      <a href="#comparer" class="cta-button">Démarrer une comparaison</a>
+      <a href="#fonctionnement" class="secondary-button">Comment ça marche</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import '../../styles/variables.css';
+
+  .hero {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--white);
+    padding: 5rem 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+  }
+
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>

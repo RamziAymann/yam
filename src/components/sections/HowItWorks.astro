@@ -1,0 +1,77 @@
+---
+// src/components/sections/HowItWorks.astro
+import { STEPS } from '../../utils/constants';
+---
+
+<section class="how-it-works" id="fonctionnement">
+  <div class="container">
+    <div class="section-title">
+      <h2>Comment fonctionne notre comparateur</h2>
+      <p>En seulement 3 étapes, trouvez l'offre qui vous convient le mieux</p>
+    </div>
+    <div class="steps">
+      {
+        STEPS.map(step => (
+          <div class="step">
+            <div class="step-number">{step.number}</div>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  @import '../../styles/variables.css';
+
+  .how-it-works {
+    padding: 5rem 0;
+    background-color: var(--light);
+  }
+
+  .steps {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+  }
+
+  .step {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .step h3 {
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  @media (max-width: 768px) {
+    .steps {
+      flex-direction: column;
+    }
+
+    .step {
+      margin-bottom: 2rem;
+    }
+  }
+</style>

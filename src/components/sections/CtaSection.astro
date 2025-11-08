@@ -1,0 +1,33 @@
+---
+// src/components/sections/CtaSection.astro
+---
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Prêt à faire des économies ?</h2>
+    <p>Commencez dès maintenant à comparer les offres et trouvez celle qui vous convient le mieux.</p>
+    <a href="#comparer" class="cta-button">Comparer maintenant</a>
+  </div>
+</section>
+
+<style>
+  @import '../../styles/variables.css';
+
+  .cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+  }
+</style>

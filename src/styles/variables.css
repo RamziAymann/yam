@@ -1,0 +1,36 @@
+/* Variables CSS pour la charte verte et blanche */
+:root {
+  --primary: #27ae60;
+  --primary-dark: #219653;
+  --primary-light: #6fcf97;
+  --secondary: #2d9cdb;
+  --accent: #f2994a;
+  --dark: #333333;
+  --light: #f8f9fa;
+  --white: #ffffff;
+  --text: #333333;
+  --text-light: #6c757d;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Reset et styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--white);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
